@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 function UserList() {
   const [listOfUsers, setListOfUsers] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios.get(
-        "https://jsonplaceholder.typicode.com/users"
-      );
-      setListOfUsers(result.data);
-      console.log(result);
-    };
-    fetchData();
-  },[]);
+   useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((res) => {
+        setListOfUsers(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div>
       <h1>List of users</h1>
