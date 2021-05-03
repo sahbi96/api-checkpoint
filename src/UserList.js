@@ -8,9 +8,7 @@ function UserList() {
       .then((res) => {
         setListOfUsers(res.data);
       })
-      .catch((err) => {
-       
-      });
+     
   }, []);
   return (
     <div>
