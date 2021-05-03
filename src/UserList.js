@@ -9,7 +9,7 @@ function UserList() {
         setListOfUsers(res.data);
       })
       .catch((err) => {
-        console.log(err);
+       
       });
   }, []);
   return (
